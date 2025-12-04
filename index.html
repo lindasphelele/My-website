@@ -13,6 +13,9 @@
     <nav>
       <a href="index.html" class="active">Home</a>
       <a href="about.html">About</a>
+      <a href="women.html">Women</a>
+      <a href="men.html">Men</a>
+      <a href="kids.html">Kids</a>
       <a href="contact.html">Contact</a>
       <a href="payment.html">Payment</a>
     </nav>
@@ -25,7 +28,26 @@
       From kids to adults, men to women — Sihle Mfusi brings fashion that celebrates individuality,
       confidence, and timeless elegance for everyone.
     </p>
-    <a href="#products" class="shop-btn">Shop the Collection</a>
+    <a href="#collections" class="shop-btn">Shop the Collection</a>
+  </section>
+
+  <!-- Collections Section -->
+  <section class="collections" id="collections">
+    <h2>Browse Our Collections</h2>
+    <div class="collection-grid">
+      <a class="collection-card men" href="men.html" style="background-image: url('images/men-collection.jpg');">
+        <h3>Men</h3>
+        <span class="view-btn">Explore</span>
+      </a>
+      <a class="collection-card women" href="women.html" style="background-image: url('images/women-collection.jpg');">
+        <h3>Women</h3>
+        <span class="view-btn">Explore</span>
+      </a>
+      <a class="collection-card kids" href="kids.html" style="background-image: url('images/kids-collection.jpg');">
+        <h3>Kids</h3>
+        <span class="view-btn">Explore</span>
+      </a>
+    </div>
   </section>
 
   <!-- Featured Products -->
@@ -53,31 +75,7 @@
       <div class="product">
         <img src="images/kids-shirt.jpg" alt="Kids Casual Shirt" />
         <h3>Kids Casual Shirt</h3>
-        <p>R400</p>
-        <button onclick="addToCart('Kids Casual Shirt', 400)">Add to Cart</button>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="site-footer">
-    <p>&copy; 2025 Sihle Mfusi | Fashion for Everyone</p>
-  </footer>
-
-  <!-- Cart Script -->
-  <script>
-    let cart = JSON.parse(localStorage.getItem("cart")) || [];
-
-    function addToCart(name, price) {
-      cart.push({ name, price });
-      localStorage.setItem("cart", JSON.stringify(cart));
-      alert(name + " added to cart!");
-      // Redirect to payment page
-      window.location.href = "payment.html";
-    }
-  </script>
-</body>
-</html>
+        <p>R400
 
 
 
