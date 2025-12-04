@@ -1,81 +1,42 @@
-/* Collections Section */
-.collections {
+/* General Page Styling */
+* { box-sizing: border-box; }
+
+body {
+  background-color: #e0f2e9;
+  margin: 0;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Header */
+.site-header {
+  background: linear-gradient(to right, #2e7d32, #388e3c);
+  color: white;
   text-align: center;
-  padding: 60px 20px;
+  padding: 25px 0;
+  border-bottom: 4px solid #1b5e20;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
 }
+.site-header h1 { margin: 0; font-size: 36px; font-weight: bold; }
+nav { margin-top: 12px; }
+nav a {
+  color: white; text-decoration: none; margin: 0 18px; font-weight: bold;
+  transition: color 0.3s ease;
+}
+nav a:hover, nav a.active { color: #c8e6c9; text-decoration: underline; }
 
+/* Hero */
+.hero { text-align: center; padding: 70px 20px; }
+.hero h2 { font-size: 32px; color: #2e7d32; margin-bottom: 15px; }
+.hero p { font-size: 18px; margin: 20px auto; max-width: 700px; }
+.shop-btn {
+  display: inline-block; background-color: #2e7d32; color: white;
+  padding: 14px 30px; border-radius: 6px; font-weight: bold;
+  text-decoration: none; transition: background-color 0.3s ease, transform 0.2s ease;
+}
+.shop-btn:hover { background-color: #1b5e20; transform: scale(1.05); }
+
+/* Collections Section */
+.collections { text-align: center; padding: 60px 20px; }
 .collections h2 {
-  font-size: 32px;
-  color: #2e7d32;
-  margin-bottom: 40px;
-}
-
-.collection-grid {
-  display: flex;
-  justify-content: center;
-  gap: 25px;
-  flex-wrap: wrap;
-}
-
-.collection-card {
-  position: relative;
-  width: 280px;
-  height: 180px;
-  border-radius: 12px;
-  overflow: hidden;
-  color: white;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  align-items: center;
-  padding: 20px;
-  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.collection-card h3 {
-  font-size: 24px;
-  margin-bottom: 10px;
-  text-shadow: 0 2px 4px rgba(0,0,0,0.6);
-}
-
-.collection-card .view-btn {
-  background-color: rgba(46, 125, 50, 0.9);
-  color: white;
-  padding: 10px 20px;
-  border-radius: 6px;
-  text-decoration: none;
-  font-weight: bold;
-  transition: background-color 0.3s ease;
-}
-
-.collection-card .view-btn:hover {
-  background-color: #1b5e20;
-}
-
-.collection-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 10px 18px rgba(0,0,0,0.2);
-}
-
-/* Background images for each card */
-.collection-card.men {
-  background: url('images/men-collection.jpg') center/cover no-repeat;
-}
-
-.collection-card.women {
-  background: url('images/women-collection.jpg') center/cover no-repeat;
-}
-
-.collection-card.kids {
-  background: url('images/kids-collection.jpg') center/cover no-repeat;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .collection-card {
-    width: 100%;
-    max-width: 400px;
-  }
-}
-
