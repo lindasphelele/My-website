@@ -13,13 +13,70 @@
     <nav>
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
+      <a href="women.html">Women</a>
+      <a href="men.html">Men</a>
       <a href="kids.html" class="active">Kids</a>
+      <a href="contact.html">Contact</a>
+      <a href="payment.html">Payment</a>
     </nav>
   </header>
 
   <!-- Hero Section -->
   <section class="hero">
     <h2>Kids’ Collection</h2>
-    <p>
-      Fun, colorful, and comfortable fashion for kids of all ages. Perfect for playtime, parties
+    <p>Fun, colorful, and comfortable fashion for kids of all ages.</p>
+  </section>
+
+  <!-- Kids Products -->
+  <section class="products">
+    <h2>Featured Kids’ Styles</h2>
+    <div class="products-grid">
+      <div class="product">
+        <img src="images/kids-dress.jpg" alt="Kids Party Dress" />
+        <h3>Kids Party Dress</h3>
+        <p>R650</p>
+        <button onclick="addToCart('Kids Party Dress', 650)">Add to Cart</button>
+      </div>
+      <div class="product">
+        <img src="images/kids-shirt.jpg" alt="Kids Casual Shirt" />
+        <h3>Kids Casual Shirt</h3>
+        <p>R400</p>
+        <button onclick="addToCart('Kids Casual Shirt', 400)">Add to Cart</button>
+      </div>
+      <div class="product">
+        <img src="images/kids-shoes.jpg" alt="Kids Sneakers" />
+        <h3>Kids Sneakers</h3>
+        <p>R550</p>
+        <button onclick="addToCart('Kids Sneakers', 550)">Add to Cart</button>
+      </div>
+      <div class="product">
+        <img src="images/kids-jacket.jpg" alt="Kids Winter Jacket" />
+        <h3>Kids Winter Jacket</h3>
+        <p>R750</p>
+        <button onclick="addToCart('Kids Winter Jacket', 750)">Add to Cart</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <p>&copy; 2025 Sihle Mfusi | Fashion for Everyone</p>
+  </footer>
+
+  <!-- Cart Script -->
+  <script>
+    // Load cart from localStorage or create empty
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    // Add product to cart and redirect to payment
+    function addToCart(name, price) {
+      cart.push({ name, price });
+      localStorage.setItem("cart", JSON.stringify(cart));
+      alert(name + " added to cart!");
+      window.location.href = "payment.html";
+    }
+  </script>
+</body>
+</html>
+
+
