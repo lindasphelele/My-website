@@ -24,12 +24,12 @@
   <!-- Hero Section -->
   <section class="hero">
     <h2>Kids’ Collection</h2>
-    <p>Fun, colorful, and comfortable fashion for kids of all ages.</p>
+    <p>Fun, colorful, and comfortable fashion for kids of all ages. Browse items below and add them to your cart.</p>
   </section>
 
   <!-- Kids Products -->
   <section class="products">
-    <h2>Featured Kids’ Styles</h2>
+    <h2>Available Kids’ Styles</h2>
     <div class="products-grid">
       <div class="product">
         <img src="images/kids-dress.jpg" alt="Kids Party Dress" />
@@ -58,6 +58,14 @@
     </div>
   </section>
 
+  <!-- Cart Preview -->
+  <section class="contact-section">
+    <h2>Your Cart</h2>
+    <div id="cart-items"></div>
+    <p id="cart-total"></p>
+    <button onclick="goToCheckout()">Proceed to Checkout</button>
+  </section>
+
   <!-- Footer -->
   <footer class="site-footer">
     <p>&copy; 2025 Sihle Mfusi | Fashion for Everyone</p>
@@ -68,15 +76,48 @@
     // Load cart from localStorage or create empty
     let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-    // Add product to cart and redirect to payment
+    // Function to add product to cart
     function addToCart(name, price) {
       cart.push({ name, price });
       localStorage.setItem("cart", JSON.stringify(cart));
-      alert(name + " added to cart!");
-      window.location.href = "payment.html";
+      renderCart();
     }
+
+    // Render cart preview
+    function renderCart() {
+      const cartDiv = document.getElementById("cart-items");
+      const totalDiv = document.getElementById("cart-total");
+      cartDiv.innerHTML = "";
+      let total = 0;
+
+      if (cart.length === 0) {
+        cartDiv.innerHTML = "<p>Your cart is empty.</p>";
+        totalDiv.textContent = "";
+      } else {
+        cart.forEach(item => {
+          const p = document.createElement("p");
+          p.textContent = item.name + " - R" + item.price;
+          cartDiv.appendChild(p);
+          total += item.price;
+        });
+        totalDiv.textContent = "Total: R" + total;
+      }
+    }
+
+    // Go to checkout page
+    function goToCheckout() {
+      if (cart.length === 0) {
+        alert("Your cart is empty. Please add items first.");
+      } else {
+        window.location.href = "payment.html";
+      }
+    }
+
+    // Render cart on page load
+    renderCart();
   </script>
 </body>
 </html>
+
 
 
