@@ -1,28 +1,136 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Men's Collection - Sihle Mfusi</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Men Collection - Sihle Mfusi</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <!-- Header -->
   <header class="site-header">
     <h1>Sihle Mfusi</h1>
     <nav>
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
+      <a href="women.html">Women</a>
+      <a href="men.html" class="active">Men</a>
+      <a href="kids.html">Kids</a>
       <a href="contact.html">Contact</a>
+      <a href="payment.html">Payment</a>
     </nav>
   </header>
 
-  <section class="collections">
-    <h2>Men's Collection</h2>
-    <p>Explore our stylish suits, shirts, and casual wear designed for confidence and comfort.</p>
+  <!-- Hero Section -->
+  <section class="hero">
+    <h2>Men’s Collection</h2>
+    <p>Classic tailoring and modern essentials for confidence in every setting. Browse items below and add them to your cart.</p>
   </section>
 
+  <!-- Men Products -->
+  <section class="products">
+    <h2>Available Men’s Styles</h2>
+    <div class="products-grid">
+      <div class="product">
+        <img src="images/men-suit.jpg" alt="Men's Classic Suit" />
+        <h3>Men's Classic Suit</h3>
+        <p>R1800</p>
+        <button onclick="addToCart('Men\'s Classic Suit', 1800)">Add to Cart</button>
+      </div>
+      <div class="product">
+        <img src="images/men-shirt.jpg" alt="Men’s Oxford Shirt" />
+        <h3>Men’s Oxford Shirt</h3>
+        <p>R500</p>
+        <button onclick="addToCart('Men’s Oxford Shirt', 500)">Add to Cart</button>
+      </div>
+      <div class="product">
+        <img src="images/men-jeans.jpg" alt="Men’s Denim Jeans" />
+        <h3>Men’s Denim Jeans</h3>
+        <p>R750</p>
+        <button onclick="addToCart('Men’s Denim Jeans', 750)">Add to Cart</button>
+      </div>
+      <div class="product">
+        <img src="images/men-jacket.jpg" alt="Men’s Bomber Jacket" />
+        <h3>Men’s Bomber Jacket</h3>
+        <p>R1200</p>
+        <button onclick="addToCart('Men’s Bomber Jacket', 1200)">Add to Cart</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cart Preview -->
+  <section class="contact-section">
+    <h2>Your Cart</h2>
+    <div id="cart-items"></div>
+    <p id="cart-total"></p>
+    <button onclick="goToCheckout()">Proceed to Checkout</button>
+    <button onclick="clearCart()">Clear Cart</button>
+  </section>
+
+  <!-- Footer -->
   <footer class="site-footer">
     <p>&copy; 2025 Sihle Mfusi | Fashion for Everyone</p>
   </footer>
+
+  <!-- Cart Script -->
+  <script>
+    // Load cart from localStorage or create empty
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    // Add product to cart
+    function addToCart(name, price) {
+      cart.push({ name, price });
+      localStorage.setItem("cart", JSON.stringify(cart));
+      renderCart();
+    }
+
+    // Render cart preview
+    function renderCart() {
+      const cartDiv = document.getElementById("cart-items");
+      const totalDiv = document.getElementById("cart-total");
+      cartDiv.innerHTML = "";
+      let total = 0;
+
+      if (cart.length === 0) {
+        cartDiv.innerHTML = "<p>Your cart is empty.</p>";
+        totalDiv.textContent = "";
+      } else {
+        cart.forEach(item => {
+          const p = document.createElement("p");
+          p.textContent = item.name + " - R" + item.price;
+          cartDiv.appendChild(p);
+          total += item.price;
+        });
+        totalDiv.textContent = "Total: R" + total;
+      }
+    }
+
+    // Go to checkout page
+    function goToCheckout() {
+      if (cart.length === 0) {
+        alert("Your cart is empty. Please add items first.");
+      } else {
+        window.location.href = "payment.html";
+      }
+    }
+
+    // Clear cart
+    function clearCart() {
+      if (cart.length === 0) {
+        alert("Your cart is already empty.");
+      } else {
+        if (confirm("Are you sure you want to clear your cart?")) {
+          cart = [];
+          localStorage.removeItem("cart");
+          renderCart();
+          alert("Your cart has been cleared.");
+        }
+      }
+    }
+
+    // Render cart on page load
+    renderCart();
+  </script>
 </body>
 </html>
+
