@@ -88,6 +88,41 @@ nav a.active {
   transform: scale(1.05);
 }
 
+/* Collections Section */
+.collections {
+  text-align: center;
+  padding: 50px 20px;
+}
+
+.collections h2 {
+  font-size: 28px;
+  color: #2e7d32;
+  margin-bottom: 25px;
+}
+
+.collection-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.collection-btn {
+  display: inline-block;
+  background-color: #2e7d32;
+  color: white;
+  padding: 14px 30px;
+  border-radius: 6px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.collection-btn:hover {
+  background-color: #1b5e20;
+  transform: scale(1.05);
+}
+
 /* Products Section */
 .products {
   text-align: center;
@@ -138,4 +173,167 @@ nav a.active {
   padding: 10px 18px;
   border-radius: 5px;
   cursor: pointer;
-  transition: background-color
+  transition: background-color 0.3s ease;
+}
+
+.product button:hover {
+  background-color: #1b5e20;
+}
+
+/* About Section */
+.about-section {
+  background-color: #ffffff;
+  padding: 60px 30px;
+  margin: 50px auto;
+  max-width: 900px;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+}
+
+.about-section h2 {
+  font-size: 30px;
+  color: #2e7d32;
+  margin-bottom: 25px;
+}
+
+.about-section p {
+  font-size: 17px;
+  line-height: 1.7;
+  margin-bottom: 18px;
+}
+
+/* Contact Section */
+.contact-section {
+  background-color: #ffffff;
+  padding: 50px 30px;
+  margin: 50px auto;
+  max-width: 600px;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+}
+
+.contact-section h2 {
+  font-size: 28px;
+  color: #2e7d32;
+  margin-bottom: 20px;
+}
+
+.contact-section p {
+  font-size: 16px;
+  margin-bottom: 25px;
+}
+
+/* Contact Details */
+.contact-details {
+  margin-bottom: 25px;
+  text-align: left;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.contact-details p {
+  margin: 8px 0;
+  color: #2e7d32;
+  font-weight: bold;
+}
+
+/* Contact Form */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact-form label {
+  text-align: left;
+  font-weight: bold;
+  color: #333;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 14px;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #2e7d32;
+  outline: none;
+}
+
+.contact-form button {
+  background-color: #2e7d32;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+  background-color: #1b5e20;
+}
+
+/* Footer */
+.site-footer {
+  background-color: #f8f8f8;
+  color: #333;
+  text-align: center;
+  padding: 25px 0;
+  font-size: 14px;
+  border-top: 1px solid #ddd;
+  margin-top: 50px;
+}
+
+/* Responsive: tablets */
+@media (max-width: 992px) {
+  .site-header h1 {
+    font-size: 32px;
+  }
+  .hero {
+    padding: 60px 20px;
+  }
+  .product {
+    width: 45%;
+    margin: 15px 2%;
+  }
+}
+
+/* Responsive: phones */
+@media (max-width: 600px) {
+  nav a {
+    margin: 0 10px;
+  }
+  .site-header h1 {
+    font-size: 28px;
+    letter-spacing: 1px;
+  }
+  .hero h2 {
+    font-size: 26px;
+  }
+  .hero p {
+    font-size: 16px;
+    max-width: 90%;
+  }
+  .products {
+    padding: 40px 15px;
+  }
+  .product {
+    width: 100%;
+    margin: 12px 0;
+  }
+  .about-section,
+  .contact-section {
+    margin: 30px 15px;
+    padding: 40px 20px;
+  }
+}
+
