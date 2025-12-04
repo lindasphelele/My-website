@@ -37,4 +37,18 @@ form button {
 form button:hover {
   background-color: #c2185b;
 }
+.site-footer {
+  background-color: #f8f8f8;
+  color: #333;
+  text-align: center;
+  padding: 20px 0;
+  font-family: 'Helvetica Neue', sans-serif;
+  font-size: 14px;
+  border-top: 1px solid #ddd;
+  margin-top: 40px;
+}
+
+.footer-content p {
+  margin: 5px 0;
+}
 
