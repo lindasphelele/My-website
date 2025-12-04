@@ -4,12 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact - Sihle Mfusi</title>
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <!-- Header -->
   <header class="site-header">
-    <img src="images/logo.png" alt="Sihle Mfusi Logo" class="logo">
     <h1>Sihle Mfusi</h1>
     <nav>
       <a href="index.html">Home</a>
@@ -18,27 +17,34 @@
     </nav>
   </header>
 
-  <!-- Main Content -->
-  <main>
-    <section class="contact-section">
-      <h2>Get in Touch</h2>
-      <p>We’d love to hear from you! Whether you have questions, feedback, or collaboration ideas,
-         reach out to Sihle Mfusi using the form below.</p>
+  <!-- Contact Section -->
+  <section class="contact-section">
+    <h2>Get in Touch</h2>
+    <p>We’d love to hear from you! Whether you have questions, feedback, or collaboration ideas,
+       reach out to Sihle Mfusi using the details below or the form.</p>
 
-      <form class="contact-form" action="#" method="post">
-        <label for="name">Full Name</label>
-        <input type="text" id="name" name="name" placeholder="Your name..." required>
+    <!-- Contact Details -->
+    <div class="contact-details">
+      <p><strong>Email:</strong> sihlemfusi@example.com</p>
+      <p><strong>Phone:</strong> +27 71 234 5678</p>
+      <p><strong>Address:</strong> Johannesburg, South Africa</p>
+      <p><strong>Instagram:</strong> @sihle_mfusi_fashion</p>
+    </div>
 
-        <label for="email">Email Address</label>
-        <input type="email" id="email" name="email" placeholder="Your email..." required>
+    <!-- Contact Form -->
+    <form class="contact-form" action="#" method="post">
+      <label for="name">Full Name</label>
+      <input type="text" id="name" name="name" placeholder="Your name..." required>
 
-        <label for="message">Message</label>
-        <textarea id="message" name="message" rows="5" placeholder="Write your message..." required></textarea>
+      <label for="email">Email Address</label>
+      <input type="email" id="email" name="email" placeholder="Your email..." required>
 
-        <button type="submit">Send Message</button>
-      </form>
-    </section>
-  </main>
+      <label for="message">Message</label>
+      <textarea id="message" name="message" rows="5" placeholder="Write your message..." required></textarea>
+
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
 
   <!-- Footer -->
   <footer class="site-footer">
@@ -46,4 +52,5 @@
   </footer>
 </body>
 </html>
+
 
