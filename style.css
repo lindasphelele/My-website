@@ -48,7 +48,32 @@ form button:hover {
   margin-top: 40px;
 }
 
-.footer-content p {
-  margin: 5px 0;
+/* Set the entire page background to green */
+body {
+  background-color: #e0f2e9; /* soft green for elegance */
+  margin: 0;
+  font-family: 'Helvetica Neue', sans-serif;
 }
+
+/* Style the header */
+.site-header {
+  background-color: #2e7d32; /* rich green */
+  color: white;
+  text-align: center;
+  padding: 30px 0;
+  border-bottom: 4px solid #1b5e20;
+}
+
+.site-header h1 {
+  margin: 0;
+  font-size: 36px;
+  letter-spacing: 2px;
+}
+
+.site-header p {
+  margin: 5px 0 0;
+  font-size: 18px;
+  font-style: italic;
+}
+
 
