@@ -1,5 +1,5 @@
-// Simple script to show an alert when the page loads
-window.onload = function() {
-  console.log("Website loaded successfully!");
-};
+function shopNow() {
+  alert("Redirecting to shop page...");
+  // Later you can link this to a real shop page or checkout system
+}
 
